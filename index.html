@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deposyt — GTM Whiteboard</title>
+<title>Deposyt / GTM Whiteboard</title>
+<meta name="description" content="A go-to-market strategy whiteboard for Deposyt, built by Antek Krystecki.">
+<meta property="og:title" content="Deposyt / GTM Whiteboard">
+<meta property="og:description" content="Go-to-market strategy, brand positioning, and creative direction for Deposyt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://a-krystecki.github.io/Deposyt-AKrystecki-Whiteboard/">
+<meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="fonts.css">
 <style>
@@ -224,6 +230,8 @@
   .note-purple  { background: #c4a4e4; }
   .note-purple-2{ background: #d0b4ec; }
   .note-yellow  { background: #ffe270; }
+  .note-gradient { background: linear-gradient(135deg, #4a0e8f 0%, #7b2ff7 50%, #a020c0 100%); color: #fff; }
+  .note-gradient .note-author { color: rgba(255,255,255,0.7); }
 
   /* ── MODAL ── */
   .modal-overlay {
@@ -385,6 +393,39 @@
     display: block;
   }
 
+  .display-ad-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .display-ad-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .display-ad-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #999;
+    text-align: center;
+  }
+  .display-ad-label.redesign {
+    color: #e040fb;
+  }
+  .display-ad-card {
+    border: 1.5px solid #e8e4e0;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .display-ad-card img {
+    width: 100%;
+    display: block;
+  }
+
   .note { cursor: pointer; }
 
   /* ── INFRA GRID ── */
@@ -515,7 +556,7 @@
             <div class="note flip-lo note-purple-2">GTM Workflow<span class="note-author">Antek Krystecki</span></div>
             <div class="note flip-mid note-purple wide">Testing, Metrics and Iterations<span class="note-author">Antek Krystecki</span></div>
             <div class="note flip-hi note-purple-2">Creative Collaboration<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-mid note-yellow">DEMO REDESIGN EXPERIMENT<span class="note-author">Antek Krystecki</span></div>
+            <div class="note flip-mid note-gradient">DEMO REDESIGN EXPERIMENT<span class="note-author">Antek Krystecki</span></div>
           </div>
         </div>
 
@@ -548,7 +589,7 @@
       </div>
 
       <div class="modal-email-ref">
-        <div class="modal-email-label">Reference — Internal</div>
+        <div class="modal-email-label">Reference: Internal</div>
         <img src="img01.png" alt="Email reference" />
       </div>
 
@@ -715,7 +756,7 @@
       </div>
 
       <div class="modal-email-ref">
-        <div class="modal-email-label">Reference — Deposyt Product Suite</div>
+        <div class="modal-email-label">Reference: Deposyt Product Suite</div>
         <img src="img02.png" alt="Deposyt products" />
       </div>
 
@@ -1080,7 +1121,7 @@
 
       <div>
         <div class="modal-section-text">
-          The creative world has changed. The old model of siloed disciplines working in isolation doesn't hold up anymore. What works now is a lean team of people who have depth in their craft but aren't precious about staying inside it. People who get curious about what the person next to them is doing and want to contribute to it. That's the kind of team this requires.
+          The old model of siloed disciplines working in isolation doesn't hold up anymore. What works now is a lean team of people who have depth in their craft but aren't precious about staying inside it. People who get curious about what the person next to them is doing and want to contribute to it. That's the kind of team this requires.
         </div>
       </div>
 
@@ -1100,7 +1141,7 @@
       <div style="border: 1.5px solid #e8e4e0; border-radius: 3px; overflow: hidden; position: relative;">
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #7b2ff7 0%, #e040fb 100%);"></div>
         <div style="background: #111; padding: 24px 24px 20px;">
-          <div style="font-family: 'Nunito', sans-serif; font-size: 8.5px; font-weight: 900; letter-spacing: 0.25em; text-transform: uppercase; color: #e040fb; margin-bottom: 6px;">01 — You</div>
+          <div style="font-family: 'Nunito', sans-serif; font-size: 8.5px; font-weight: 900; letter-spacing: 0.25em; text-transform: uppercase; color: #e040fb; margin-bottom: 6px;">01 / You</div>
           <div style="font-family: 'Nunito', sans-serif; font-size: 20px; font-weight: 900; color: #fff;">Creative Production Lead</div>
           <div style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #aaa; margin-top: 4px;">Antek Krystecki</div>
         </div>
@@ -1271,7 +1312,7 @@
 
       <!-- Design System Mockup -->
       <div style="background: #fafafa; border: 1.5px solid #e8e4e0; border-radius: 6px; padding: 32px 28px; margin: 4px 0;">
-        <div style="font-family: 'Nunito', sans-serif; font-size: 9px; font-weight: 900; letter-spacing: 0.25em; text-transform: uppercase; color: #bbb; margin-bottom: 20px;">Design System Preview — Concept</div>
+        <div style="font-family: 'Nunito', sans-serif; font-size: 9px; font-weight: 900; letter-spacing: 0.25em; text-transform: uppercase; color: #bbb; margin-bottom: 20px;">Design System Preview: Concept</div>
 
         <!-- Colour Palette Row -->
         <div style="margin-bottom: 28px;">
@@ -1390,7 +1431,7 @@
       <div>
         <div class="modal-section-label">Elements, Flourishes and Motion</div>
         <div class="modal-section-text">
-          The brand already uses arrows, highlights, underlines and background shapes that inject energy into the creative. Defining how and when they're used turns them from decoration into a system. Once those rules are set, the possibilities for animation and motion open up massively. Worth noting too, the current CTA is plain black which tends to underperform compared to coloured buttons. Deposyt has plenty of colour to pull from.
+          The brand already uses arrows, highlights, underlines and background shapes that inject energy into the creative. Defining how and when they're used turns them from decoration into a system. Once those rules are set, the possibilities for animation and motion open up massively. The current CTA is also plain black, which tends to underperform compared to coloured buttons. Deposyt has plenty of colour to pull from.
         </div>
       </div>
 
@@ -1977,7 +2018,7 @@
       <div>
         <div class="modal-section-label">Work With It, Not Against It</div>
         <div class="modal-section-text">
-          The creative industry has changed. AI isn't replacing the team, it's what lets a lean team punch above its weight. The goal is to use AI to automate the repetitive, accelerate the production, and free up the humans to focus on strategy, taste, and the work that actually requires a point of view. With the right tools integrated into the workflow, a small team can operate at the output level of a much larger one without sacrificing quality.
+          AI isn't replacing the team. It's what lets a lean team punch above its weight. The goal is to use it to automate the repetitive, accelerate production, and free up the humans to focus on strategy, taste, and the work that actually requires a point of view. With the right tools integrated into the workflow, a small team can operate at the output level of a much larger one without sacrificing quality.
         </div>
       </div>
 
@@ -2185,7 +2226,7 @@
       <div>
         <div class="modal-section-label">Start with a Foundation</div>
         <div class="modal-section-text">
-          We don't know exactly how the company operates day to day yet, and that's fine. The understanding and planning stages exist to figure that out. But once those learnings are in, we can build a workflow that fits how the team actually works, not how we assume it does. What follows is a starting framework. It's not final. It's a conversation starter that gives the team something to build on together.
+          Every company operates differently, and the understanding and planning stages exist to learn how Deposyt works from the inside. Once those learnings are in, we can build a workflow that fits how the team actually works, not how we assume it does. What follows is a starting framework. It's designed to be shaped together, not handed down as a finished process.
         </div>
       </div>
 
@@ -2474,94 +2515,48 @@
       <div>
         <div class="modal-section-label">Taking It Further: Display Ads</div>
         <div class="modal-section-text">
-          The Meta ad proves the design language works in social feeds. Display ads are a different challenge: smaller canvases, shorter attention spans, and they live alongside content rather than within a feed. The question is whether the brand still comes through.
+          The Meta ad proves the design language works in social feeds. Display ads are the next step. Taking the concept from that conversion-focused ad, we built out two display variations that promote how easy it is to switch to Deposyt. Same brand system, adapted for smaller canvases and shorter attention spans. Below is the existing display ad next to both redesigns.
+        </div>
+      </div>
+
+      <div class="display-ad-grid">
+        <div class="display-ad-column">
+          <div class="display-ad-card">
+            <img src="reference-display-ad.png" alt="Current Deposyt display ad">
+          </div>
+          <div class="display-ad-label">Current</div>
+        </div>
+        <div class="display-ad-column">
+          <div class="display-ad-card">
+            <img src="Lifestyle-Display.png" alt="Deposyt lifestyle display ad concept">
+          </div>
+          <div class="display-ad-label redesign">Lifestyle</div>
+        </div>
+        <div class="display-ad-column">
+          <div class="display-ad-card">
+            <img src="Infographic-Display.png" alt="Deposyt infographic display ad concept">
+          </div>
+          <div class="display-ad-label redesign">Infographic</div>
         </div>
       </div>
 
       <div>
-        <div class="modal-section-label">The Current State: Existing Display Ad</div>
+        <div class="modal-section-label">What Changes</div>
         <div class="modal-section-text">
-          Worth noting that this appears to be a fairly outdated ad I found online, so it may not reflect the most recent creative direction. That said, it's worth looking at because the same core issues keep showing up.
-        </div>
-      </div>
-
-      <div class="modal-email-ref">
-        <div class="modal-email-label">Reference: Existing Deposyt Display Ad</div>
-        <img src="reference-display-ad.png" alt="Current Deposyt display ad">
-      </div>
-
-      <div>
-        <div class="modal-section-text">
-          Like the product offering page, the ad doesn't reinforce Deposyt's brand through colour or messaging. It's a white background with a generic credit card and a vague headline. There's no purple, no gradient, no visual identity. If you covered the small logo at the top, you wouldn't be able to tell which company this belongs to. The messaging is equally flat: "Call Today. Save Right Away." doesn't say what Deposyt does, why it's different, or what the user gets.
+          The existing ad has no brand presence. White background, generic credit card, vague copy. Cover the logo and it could belong to anyone. The redesigns fix every gap at once.
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
           <div style="display: flex; gap: 12px; align-items: baseline;">
-            <span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #bbb; flex-shrink: 0;">01</span>
-            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>No brand reinforcement.</strong> White background, default typography, a generic credit card. Nothing here signals Deposyt. Strip the logo and it could belong to anyone.</span>
-          </div>
-          <div style="display: flex; gap: 12px; align-items: baseline;">
-            <span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #bbb; flex-shrink: 0;">02</span>
-            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>Vague messaging.</strong> "Call Today. Save Right Away." doesn't communicate what Deposyt specifically does or why someone should care. There's no hook, no pain point, no value.</span>
-          </div>
-          <div style="display: flex; gap: 12px; align-items: baseline;">
-            <span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #bbb; flex-shrink: 0;">03</span>
-            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>No visual presence at scale.</strong> A dark card on a white background disappears at banner sizes. There's no colour or contrast to catch the eye when this sits alongside real content on a webpage.</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="modal-section-label">The Redesign: Lifestyle Display</div>
-        <div class="modal-section-text">
-          Same format. The lifestyle approach puts a real person front and centre, a business owner in their environment. It's relatable and it immediately tells the viewer "this is for people like me."
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: center;">
-        <img src="Lifestyle-Display.png" alt="Deposyt lifestyle display ad concept" style="max-width: 300px; width: 100%; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.12);">
-      </div>
-
-      <div>
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <div style="display: flex; gap: 12px; align-items: baseline;">
             <span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #e040fb; flex-shrink: 0;">01</span>
-            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>The design system flexes.</strong> The deep purple brand bar, gradient CTA, and bold typography all carry over from the Meta ad, but the layout adapts completely to fit a lifestyle-led creative. The system provides a consistent framework without forcing a single look.</span>
+            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>Brand colours lead.</strong> Deep purple backgrounds and gradient accents replace the blank white canvas. Even at banner sizes, these are unmistakably Deposyt.</span>
           </div>
           <div style="display: flex; gap: 12px; align-items: baseline;">
             <span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #e040fb; flex-shrink: 0;">02</span>
-            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>Typography scales cleanly.</strong> "We Handle The Switch" works at every size, from a full-screen story to a narrow skyscraper. The weight, spacing, and hierarchy hold up because they were designed as a system, not a one-off.</span>
+            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>Messaging gets specific.</strong> "Call Today. Save Right Away." becomes direct, benefit-driven copy. The lifestyle ad puts a real business owner front and centre. The infographic ad uses a bespoke timer graphic to prove switching takes less than 24 hours.</span>
           </div>
           <div style="display: flex; gap: 12px; align-items: baseline;">
             <span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #e040fb; flex-shrink: 0;">03</span>
-            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>Lifestyle imagery builds trust.</strong> A real business owner in their shop, using a tablet, looking confident. It's a deliberate choice that makes the target audience see themselves in the ad.</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="modal-section-label">The Redesign: Infographic Display</div>
-        <div class="modal-section-text">
-          The third variation takes the same template and replaces the imagery with a bespoke infographic, a "less than 24 hours" switching timer that reinforces the pain-point messaging with a bold, data-driven visual.
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: center;">
-        <img src="Infographic-Display.png" alt="Deposyt infographic display ad concept" style="max-width: 300px; width: 100%; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.12);">
-      </div>
-
-      <div>
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <div style="display: flex; gap: 12px; align-items: baseline;">
-            <span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #e040fb; flex-shrink: 0;">01</span>
-            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>Bespoke graphics that match the message.</strong> The circular timer graphic was built to communicate one thing: switching is fast. The visual and the copy say the exact same thing. That's the difference bespoke creative makes.</span>
-          </div>
-          <div style="display: flex; gap: 12px; align-items: baseline;">
-            <span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #e040fb; flex-shrink: 0;">02</span>
-            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>Brand consistency across styles.</strong> Lifestyle photography and custom infographics are completely different creative approaches, but the purple palette, the gradient accent, the typography, and the messaging framework make both feel unmistakably Deposyt.</span>
-          </div>
-          <div style="display: flex; gap: 12px; align-items: baseline;">
-            <span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #e040fb; flex-shrink: 0;">03</span>
-            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>Templates free up time for what matters.</strong> When the layout, colours, and typography are locked in, the team isn't rebuilding structure from scratch every time. That time goes into creating bespoke imagery: custom UI screenshots, product visuals, infographics. The assets that actually differentiate the brand.</span>
+            <span style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #333; line-height: 1.6;"><strong>The system flexes without breaking.</strong> Lifestyle photography and custom infographics are completely different creative approaches, but the purple palette, gradient accent, typography, and messaging framework make both feel like the same brand. The template handles structure so the team can focus on bespoke creative.</span>
           </div>
         </div>
       </div>
@@ -2571,9 +2566,9 @@
         <span class="gradient-word">Endlessly adaptable.</span>
       </div>
 
-      <div style="background: #f5f3f0; border: 1.5px solid #e8e4e0; border-radius: 3px; padding: 20px 24px;">
+      <div>
         <div style="font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 900; color: #111; margin-bottom: 8px;">This is what applied strategy looks like.</div>
-        <div style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #555; line-height: 1.7;">The reference images share the same problem: the brand isn't reinforced through colour or messaging. The redesigns fix that. Deposyt's purple palette creates instant recognition, the messaging is specific and direct, and the visuals actually prove the claim. The templates handle the structure so the team can focus on the creative that moves the needle.</div>
+        <div style="font-family: 'Nunito', sans-serif; font-size: 13px; color: #555; line-height: 1.7;">Every reference shares the same gap: the brand isn't reinforced through colour or messaging. The redesigns fix that across formats. Deposyt's purple palette creates instant recognition, the messaging is specific and direct, and the visuals prove the claim. One design system, applied consistently from social feeds to display banners.</div>
       </div>
 
     </div>
