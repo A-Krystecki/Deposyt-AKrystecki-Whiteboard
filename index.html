@@ -162,6 +162,8 @@
 
   .cards { display: flex; flex-wrap: wrap; gap: 12px; align-items: start; justify-content: center; }
 
+
+
   /* ── STICKY NOTES ── */
   .note {
     padding: 12px;
@@ -282,8 +284,15 @@
 
 
 
+  .note-circled {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
   .note-author { display: none; }
   .note.wide { width: 130px; height: 130px; }
+
 
   .note-red     { background-color: #ff8573; }
   .note-red-2   { background-color: #ff9d8d; }
@@ -292,19 +301,12 @@
   .note-purple  { background-color: #c4a4e4; }
   .note-purple-2{ background-color: #d0b4ec; }
   .note-yellow  { background-color: #ffe270; }
-  .note-gradient { background: linear-gradient(135deg, #4a0e8f 0%, #7b2ff7 50%, #a020c0 100%); color: rgba(0, 0, 0, 0.65); }
+  .note-gradient { background-color: #9b6dd7; }
 
   /* Gradient highlights toward peeled corner */
   [class*="peel-br"]:not(.note-gradient) { background-image: linear-gradient(135deg, rgba(255,255,255,0) 70%, rgba(255,255,255,0.18) 100%); }
   [class*="peel-bl"]:not(.note-gradient) { background-image: linear-gradient(225deg, rgba(255,255,255,0) 70%, rgba(255,255,255,0.18) 100%); }
   .note-gradient .note-author { color: rgba(255,255,255,0.7); }
-  .note-gradient.tex-crumple::after {
-    background-image: url("white-crumpled-paper-texture-background-design-space-white-tone.jpg"), url("paper-texture.jpg");
-    background-size: 280px, 200px;
-    background-position: -45px -55px, -75px -110px;
-    mix-blend-mode: overlay;
-    opacity: 0.8;
-  }
 
   /* ── MODAL ── */
   .modal-overlay {
@@ -629,11 +631,13 @@
             <div class="note shadow-1 note-purple-2 peel-br-sm tex-15">GTM Workflow<span class="note-author">Antek Krystecki</span></div>
             <div class="note shadow-10 note-purple wide tex-2">Testing, Metrics and Iterations<span class="note-author">Antek Krystecki</span></div>
             <div class="note shadow-17 note-purple-2 peel-bl-lg tex-13">Creative Collaboration<span class="note-author">Antek Krystecki</span></div>
-            <div class="note shadow-13 note-gradient peel-br-md tex-17 tex-crumple">DEMO REDESIGN EXPERIMENT<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-13 note-gradient peel-br-md tex-17"><svg class="note-circled" viewBox="0 0 130 80" xmlns="http://www.w3.org/2000/svg"><ellipse cx="65" cy="40" rx="64" ry="38" fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="1.8" stroke-dasharray="6 2 8 1 5 3" stroke-linecap="round" transform="rotate(-1.5, 65, 40)"/><ellipse cx="65" cy="40" rx="62" ry="36" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1.2" stroke-dasharray="9 2 7 3 5 1" stroke-linecap="round" transform="rotate(1, 65, 40)"/><text x="65" y="36" text-anchor="middle" font-family="'PWMarker', cursive" font-size="14" fill="currentColor"><tspan x="65" dy="0">DEMO REDESIGN</tspan><tspan x="65" dy="15">EXPERIMENT</tspan></text></svg><span class="note-author">Antek Krystecki</span></div>
           </div>
         </div>
 
       </div><!-- board -->
+
+
 
     </div><!-- whiteboard -->
   </div><!-- frame -->
