@@ -169,7 +169,10 @@
     font-family: 'PWMarker', cursive;
     font-size: 13px;
     line-height: 1.4;
-    color: #222;
+    color: rgba(20, 20, 20, 0.81);
+    text-shadow:
+      0 0 0.5px rgba(0,0,0,0.15);
+    -webkit-font-smoothing: antialiased;
     position: relative;
     cursor: default;
     width: 130px;
@@ -178,60 +181,130 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
-    box-shadow: 2px 4px 10px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.10);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
   }
 
-  /* Variety of rotations */
-  .note:nth-child(1)  { transform: rotate(-2.5deg); }
-  .note:nth-child(2)  { transform: rotate( 1.8deg); }
-  .note:nth-child(3)  { transform: rotate(-0.5deg); }
-  .note:nth-child(4)  { transform: rotate( 2.2deg); }
-  .note:nth-child(5)  { transform: rotate(-1.8deg); }
-  .note:nth-child(6)  { transform: rotate( 0.8deg); }
-  .note:nth-child(7)  { transform: rotate(-1.2deg); }
 
-  /* Lift intensities via shadow depth */
-  .flip-lo  { box-shadow: 2px 4px 8px rgba(0,0,0,0.13), 0 1px 2px rgba(0,0,0,0.08); }
-  .flip-mid { box-shadow: 3px 7px 16px rgba(0,0,0,0.18), 0 2px 4px rgba(0,0,0,0.10); }
-  .flip-hi  { box-shadow: 5px 12px 24px rgba(0,0,0,0.24), 0 3px 6px rgba(0,0,0,0.12); }
+  /* Variety of rotations + ink bleed variation */
+  .note:nth-child(1)  { transform: rotate(-2.5deg); letter-spacing: 0.01em; text-shadow: 0 0 0.6px rgba(0,0,0,0.18); }
+  .note:nth-child(2)  { transform: rotate( 1.8deg); letter-spacing: -0.01em; word-spacing: 1px; text-shadow: 0 0 0.4px rgba(0,0,0,0.12); }
+  .note:nth-child(3)  { transform: rotate(-0.5deg); letter-spacing: 0.02em; text-shadow: 0 0 0.7px rgba(0,0,0,0.20); }
+  .note:nth-child(4)  { transform: rotate( 2.2deg); word-spacing: 2px; text-shadow: 0 0 0.5px rgba(0,0,0,0.14); }
+  .note:nth-child(5)  { transform: rotate(-1.8deg); letter-spacing: 0.01em; text-shadow: 0 0 0.6px rgba(0,0,0,0.19); }
+  .note:nth-child(6)  { transform: rotate( 0.8deg); letter-spacing: -0.005em; text-shadow: 0 0 0.3px rgba(0,0,0,0.10); }
+  .note:nth-child(7)  { transform: rotate(-1.2deg); word-spacing: 1px; letter-spacing: 0.015em; text-shadow: 0 0 0.6px rgba(0,0,0,0.16); }
 
+  /* Paper texture overlay via ::after — two textures layered, preserves base color */
+  .note::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: url("paper-texture.jpg");
+    background-size: 200px 200px;
+    background-position: 0 0;
+    mix-blend-mode: multiply;
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  /* Per-note texture variation — crumple offset/scale, grain offset/scale, and opacity */
+  .tex-1::after  { background-position: -10px -20px;   background-size: 180px; }
+  .tex-2::after  { background-position: -80px -30px;   background-size: 220px; }
+  .tex-3::after  { background-position: -50px -70px;   background-size: 190px; }
+  .tex-4::after  { background-position: -20px -90px;   background-size: 210px; }
+  .tex-5::after  { background-position: -70px -10px;   background-size: 200px; }
+  .tex-6::after  { background-position: -110px -50px;  background-size: 170px; }
+  .tex-7::after  { background-position: -30px -60px;   background-size: 230px; }
+  .tex-8::after  { background-position: -60px -40px;   background-size: 185px; }
+  .tex-9::after  { background-position: -90px -80px;   background-size: 210px; }
+  .tex-10::after { background-position: -40px -100px;  background-size: 195px; }
+  .tex-11::after { background-position: -100px -20px;  background-size: 220px; }
+  .tex-12::after { background-position: -15px -75px;   background-size: 180px; }
+  .tex-13::after { background-position: -55px -35px;   background-size: 200px; }
+  .tex-14::after { background-position: -85px -55px;   background-size: 190px; }
+  .tex-15::after { background-position: -120px -90px;  background-size: 215px; }
+  .tex-16::after { background-position: -35px -15px;   background-size: 175px; }
+  .tex-17::after { background-position: -75px -110px;  background-size: 205px; }
+  .tex-18::after { background-position: -25px -45px;   background-size: 185px; }
+
+  /* Unique shadow per note */
+  .shadow-1  { box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.20), 0px 7px 10px -3px rgba(0,0,0,0.13); }
+  .shadow-2  { box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.14), 0px 5px 6px -3px rgba(0,0,0,0.08); }
+  .shadow-3  { box-shadow: 0px 6px 7px -2px rgba(0,0,0,0.30), 0px 10px 16px -4px rgba(0,0,0,0.20); }
+  .shadow-4  { box-shadow: 0px 3px 4px -2px rgba(0,0,0,0.17), 0px 6px 8px -3px rgba(0,0,0,0.10); }
+  .shadow-5  { box-shadow: 0px 5px 6px -2px rgba(0,0,0,0.26), 0px 8px 12px -3px rgba(0,0,0,0.17); }
+  .shadow-6  { box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.12), 0px 3px 5px -2px rgba(0,0,0,0.06); }
+  .shadow-7  { box-shadow: 0px 5px 7px -2px rgba(0,0,0,0.24), 0px 9px 14px -4px rgba(0,0,0,0.16); }
+  .shadow-8  { box-shadow: 0px 3px 4px -2px rgba(0,0,0,0.18), 0px 6px 9px -3px rgba(0,0,0,0.11); }
+  .shadow-9  { box-shadow: 0px 7px 8px -2px rgba(0,0,0,0.32), 0px 11px 18px -4px rgba(0,0,0,0.22); }
+  .shadow-10 { box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.22), 0px 7px 11px -3px rgba(0,0,0,0.14); }
+  .shadow-11 { box-shadow: 0px 3px 4px -2px rgba(0,0,0,0.15), 0px 5px 7px -3px rgba(0,0,0,0.09); }
+  .shadow-12 { box-shadow: 0px 5px 6px -2px rgba(0,0,0,0.28), 0px 8px 13px -3px rgba(0,0,0,0.18); }
+  .shadow-13 { box-shadow: 0px 3px 4px -2px rgba(0,0,0,0.19), 0px 6px 9px -3px rgba(0,0,0,0.12); }
+  .shadow-14 { box-shadow: 0px 5px 7px -2px rgba(0,0,0,0.27), 0px 9px 15px -4px rgba(0,0,0,0.18); }
+  .shadow-15 { box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.13), 0px 4px 6px -2px rgba(0,0,0,0.07); }
+  .shadow-16 { box-shadow: 0px 6px 7px -2px rgba(0,0,0,0.25), 0px 9px 14px -4px rgba(0,0,0,0.16); }
+  .shadow-17 { box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.21), 0px 7px 10px -3px rgba(0,0,0,0.13); }
+  .shadow-18 { box-shadow: 0px 6px 8px -2px rgba(0,0,0,0.30), 0px 10px 16px -4px rgba(0,0,0,0.21); }
+
+  /* Peel-up hover — pivots from top (glue strip), bottom lifts toward viewer */
+  .note {
+    transform-origin: top center;
+    transform-style: preserve-3d;
+  }
   .note:hover {
-    transform: rotate(0deg) translateY(-6px) scale(1.06) !important;
-    box-shadow: 6px 16px 32px rgba(0,0,0,0.26) !important;
+    box-shadow: 0px 14px 20px -4px rgba(0,0,0,0.30), 0px 20px 36px -8px rgba(0,0,0,0.18) !important;
     z-index: 20;
   }
+  .note:nth-child(1):hover { transform: perspective(600px) rotate(-2.5deg) rotateX(18deg); }
+  .note:nth-child(2):hover { transform: perspective(600px) rotate( 1.8deg) rotateX(18deg); }
+  .note:nth-child(3):hover { transform: perspective(600px) rotate(-0.5deg) rotateX(18deg); }
+  .note:nth-child(4):hover { transform: perspective(600px) rotate( 2.2deg) rotateX(18deg); }
+  .note:nth-child(5):hover { transform: perspective(600px) rotate(-1.8deg) rotateX(18deg); }
+  .note:nth-child(6):hover { transform: perspective(600px) rotate( 0.8deg) rotateX(18deg); }
+  .note:nth-child(7):hover { transform: perspective(600px) rotate(-1.2deg) rotateX(18deg); }
 
-  /* ── CURL STYLES ──
-     Each .curl-* note gets an SVG absolutely positioned at its corner.
-     The SVG has two paths:
-       1. A shadow cast on the note surface (dark, curved inward)
-       2. The lifted flap face (lighter, curving outward)
+  /* ── PEEL CORNERS ──
+     Asymmetric border-radius on different corners at varying intensities.
+     peel-{corner}-{intensity}: sm = subtle, md = medium, lg = pronounced
   ── */
-  .curl-svg {
-    position: absolute;
-    pointer-events: none;
-    z-index: 5;
-    overflow: visible;
-  }
-  .curl-bl .curl-svg { bottom: 0; left: 0; }
-  .curl-br .curl-svg { bottom: 0; right: 0; }
-  .curl-tr .curl-svg { top: 0; right: 0; }
-  .curl-tl .curl-svg { top: 0; left: 0; }
+  /* Bottom-right peels */
+  .peel-br-sm { border-bottom-right-radius: 30px 3px; }
+  .peel-br-md { border-bottom-right-radius: 50px 5px; }
+  .peel-br-lg { border-bottom-right-radius: 70px 7px; }
+
+  /* Bottom-left peels */
+  .peel-bl-sm { border-bottom-left-radius: 30px 3px; }
+  .peel-bl-md { border-bottom-left-radius: 50px 5px; }
+  .peel-bl-lg { border-bottom-left-radius: 70px 7px; }
+
 
 
   .note-author { display: none; }
   .note.wide { width: 130px; height: 130px; }
 
-  .note-red     { background: #ff8573; }
-  .note-red-2   { background: #ff9d8d; }
-  .note-green   { background: #7ddba0; }
-  .note-green-2 { background: #6ed195; }
-  .note-purple  { background: #c4a4e4; }
-  .note-purple-2{ background: #d0b4ec; }
-  .note-yellow  { background: #ffe270; }
-  .note-gradient { background: linear-gradient(135deg, #4a0e8f 0%, #7b2ff7 50%, #a020c0 100%); color: #fff; }
+  .note-red     { background-color: #ff8573; }
+  .note-red-2   { background-color: #ff9d8d; }
+  .note-green   { background-color: #7ddba0; }
+  .note-green-2 { background-color: #6ed195; }
+  .note-purple  { background-color: #c4a4e4; }
+  .note-purple-2{ background-color: #d0b4ec; }
+  .note-yellow  { background-color: #ffe270; }
+  .note-gradient { background: linear-gradient(135deg, #4a0e8f 0%, #7b2ff7 50%, #a020c0 100%); color: rgba(0, 0, 0, 0.65); }
+
+  /* Gradient highlights toward peeled corner */
+  [class*="peel-br"]:not(.note-gradient) { background-image: linear-gradient(135deg, rgba(255,255,255,0) 70%, rgba(255,255,255,0.18) 100%); }
+  [class*="peel-bl"]:not(.note-gradient) { background-image: linear-gradient(225deg, rgba(255,255,255,0) 70%, rgba(255,255,255,0.18) 100%); }
   .note-gradient .note-author { color: rgba(255,255,255,0.7); }
+  .note-gradient.tex-crumple::after {
+    background-image: url("white-crumpled-paper-texture-background-design-space-white-tone.jpg"), url("paper-texture.jpg");
+    background-size: 280px, 200px;
+    background-position: -45px -55px, -75px -110px;
+    mix-blend-mode: overlay;
+    opacity: 0.8;
+  }
 
   /* ── MODAL ── */
   .modal-overlay {
@@ -503,12 +576,12 @@
             </svg>
           </div>
           <div class="cards">
-            <div class="note flip-mid note-red">Deposyt's Voice, Brand and Values<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-lo note-red-2">200+ Products<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-hi note-red wide">Company Assets and Infrastructure<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-lo note-red-2">Competitor Research<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-mid note-red">Target Audience / UX Research<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-hi note-red-2">Current Marketing Efforts<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-5 note-red peel-br-lg tex-1">Deposyt's Voice, Brand and Values<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-2 note-red-2 tex-7">200+ Products<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-9 note-red wide peel-bl-md tex-14">Company Assets and Infrastructure<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-4 note-red-2 peel-br-sm tex-4">Competitor Research<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-12 note-red tex-11">Target Audience / UX Research<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-7 note-red-2 peel-br-md tex-9">Current Marketing Efforts<span class="note-author">Antek Krystecki</span></div>
           </div>
         </div>
 
@@ -527,13 +600,13 @@
             </svg>
           </div>
           <div class="cards">
-            <div class="note flip-lo note-green">My Role / Team Breakdown<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-hi note-green-2">Deposyt's Design Language<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-lo note-green-2">Channel Research<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-hi note-green wide">Targeted Plans (Upper Funnel vs Lower Funnel)<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-mid note-green-2">Retention<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-lo note-green">Priorities<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-hi note-green-2">Conversion<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-8 note-green peel-bl-sm tex-16">My Role / Team Breakdown<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-14 note-green-2 peel-br-md tex-3">Deposyt's Design Language<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-6 note-green-2 tex-8">Channel Research<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-18 note-green wide peel-br-lg tex-12">Targeted Plans (Upper Funnel vs Lower Funnel)<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-11 note-green-2 tex-18">Retention<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-3 note-green peel-bl-md tex-5">Priorities<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-15 note-green-2 tex-10">Conversion<span class="note-author">Antek Krystecki</span></div>
           </div>
         </div>
 
@@ -552,11 +625,11 @@
             </svg>
           </div>
           <div class="cards">
-            <div class="note flip-hi note-purple">AI Involvement<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-lo note-purple-2">GTM Workflow<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-mid note-purple wide">Testing, Metrics and Iterations<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-hi note-purple-2">Creative Collaboration<span class="note-author">Antek Krystecki</span></div>
-            <div class="note flip-mid note-gradient">DEMO REDESIGN EXPERIMENT<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-16 note-purple tex-6">AI Involvement<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-1 note-purple-2 peel-br-sm tex-15">GTM Workflow<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-10 note-purple wide tex-2">Testing, Metrics and Iterations<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-17 note-purple-2 peel-bl-lg tex-13">Creative Collaboration<span class="note-author">Antek Krystecki</span></div>
+            <div class="note shadow-13 note-gradient peel-br-md tex-17 tex-crumple">DEMO REDESIGN EXPERIMENT<span class="note-author">Antek Krystecki</span></div>
           </div>
         </div>
 
